@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,1000;1,6..12,400&display=swap");
+
+:root {
+  --main-color: #7ed52d;
+  --bg-light: grey;
+  --main-font: "Nunito Sans", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--bg-light);
+}
+
+main {
+  margin: 32px auto;
+}
+
+.app-bar {
+  display: block;
+  width: 100%;
+  background-color: black;
+  color: var(--main-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-bottom: 5px solid var(--main-color);
+}
+.app-bar h1 {
+  font-family: var(--main-font);
+  width: fit-content;
+  font-size: 2rem;
+  font-weight: 1000;
+  cursor: pointer;
+  padding: 15px 15px 15px 30px;
+}
+
+.popup-container {
+  display: flex;
+  position: fixed;
+  margin: 5rem;
+  padding: 1rem;
+  top: 0;
+  border-radius: 1rem;
+  background-color: lightgrey;
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 10);
+  border: 1px solid var(--main-color);
+  transition: 300ms ease-in-out transform;
+  transform: scale(0);
+  z-index: 1;
+}
+
+.popup-poster img {
+  height: 450px;
+  margin-right: 2rem;
+  padding: 0.4rem 0.4rem 0 0.4rem;
+  border-radius: 1rem;
+}
+
+.popup-movies-info {
+  text-align: center;
+  padding: 1rem;
+}
+
+.popup-movies-genres {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.popup-movies-genres p {
+  background-color: black;
+  color: var(--main-color);
+  padding: 0.5rem;
+  margin-inline: .5rem;
+  border: 1px solid var(--main-color);
+  border-radius: 0.5rem;
+}
+
+.popup-content > p {
+  margin-block: 1rem;
+}
+
+.close-btn {
+  font-size: 2rem;
+  top: 1rem;
+  right: 2rem;
+  cursor: pointer;
+  position: absolute;
+  user-select: none;
+  transition: 200ms ease-in-out transform;
+}
+.close-btn:hover {
+  transform: scale(1.3);
+  color: var(--main-color);
+}
+.close-btn:active {
+  transform: scale(0.5);
+}
+
+.show-popup {
+  transform: scale(1);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1280px) {
+  .popup-container {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .popup-movies-info {
+    text-align: center;
+  }
+
+  .popup-poster {
+    display: flex;
+    justify-content: center;
+  }
+
+  .popup-poster img {
+    height: 250px;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .popup-container {
+    font-size: 10px;
+    margin: 5rem 1rem 1rem 1rem;
+  }
+}
+
